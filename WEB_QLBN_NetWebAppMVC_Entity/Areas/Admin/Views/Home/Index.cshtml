@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model List<AspWebMvc.Models.Framework.BENHNHAN>
+<div class="container-fluid">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th><button onclick="window.location.href='/Admin/Home/Add'" class="btn-warning">Thêm</button></th>
+                <th>Họ tên</th>
+                <th>SĐT</th>
+                <th>Địa chỉ</th>
+                <th>Ngày đăng ký</th>
+                <th>Phương pháp điều trị</th>
+                <th>Xóa</th>
+                <th>Sửa thông tin</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>@(Model.IndexOf(item)+1)</td>
+                    <td>@item.name</td>
+                    <td>@item.phone</td>
+                    <td>@item.address</td>
+                    <td>@($"{item.time:dd/MM/yyyy}")</td>
+                    <td>@item.ppdt</td>
+                    <td>
+                        <button onclick="if (confirm('Xác nhận xóa?')) { window.location.href='/Admin/Home/Delete?id=@item.id' }" class="btn-warning">Xóa</button>
+                    </td>
+                    <td>
+                        <button onclick="window.location.href='/Admin/Home/Edit?id=@item.id'" class="btn-warning">Chỉnh sửa</button>
+                    </td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+

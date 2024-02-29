@@ -1,0 +1,1 @@
+ X:\\APP_QLBN\\app_qlbn\\.dart_tool\\flutter_build\\648d71c46f8fee1ae389b7cfd23bac17\\native_assets.yaml: 
